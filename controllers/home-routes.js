@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Model } = require('sequelize/types');
 const { Blog } = require('../models');
 
 // Get all blog entries
@@ -14,3 +15,5 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
       }
 });
+
+module.exports = router;
