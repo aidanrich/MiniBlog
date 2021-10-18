@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Model } = require('sequelize/types');
+// const { Model } = require('sequelize/types');
 const { Blog } = require('../models');
 
 // Get all blog entries
@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         const blogData = await Blog.findAll();
         
         const blogAll = blogData.map((blog) => blog.get({ plain: true }));
-        res.render('all', {blogAll});
+        res.render('homepage', {blogAll});
     
     } catch (err) {
         console.log(err);
