@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/blog/:user_id', withAuth, async (req, res) => {
     console.log("you've got mail")
     try {
         const blogData = await Blog.findAll({
