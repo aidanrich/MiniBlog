@@ -5,6 +5,7 @@ const withAuth = require('../utils/auth');
 
 // Get all blog entries
 router.get('/', withAuth, async (req, res) => {
+  console.log(req.session.user_id)
     try {
         const blogData = await Blog.findAll();
         
@@ -18,6 +19,9 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
       }
 });
+
+
+
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
