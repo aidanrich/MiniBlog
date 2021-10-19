@@ -19,7 +19,7 @@
 </form>
 <div>
 {{#each blogAll as |blog|}}
-<p> <span class="blog-num">{{blog.id}}.)</span>  {{blog.name}} </p>
+<p> <span class="blog-num">{{blog.id}}</span>.)  {{blog.name}} </p>
 
    <p> {{blog.content}} </p>
         <p>
@@ -27,7 +27,7 @@
             <div class="form-group">
         <h5>leave a comment</h5>
         <input type="text" class="blog-comment"></input>
-        <button type="submit" value="Submit" class="form-input">Submit</button>
+        <button type="submit" value="Submit" class="form-input comment-check">Submit</button>
         </div>
         </form>
     </p>
