@@ -19,8 +19,18 @@
 </form>
 <div>
 {{#each blogAll as |blog|}}
-<p> {{blog.name}}
+<p> <span class="blog-num">{{blog.id}}.)</span>  {{blog.name}} </p>
 
-    {{blog.content}} </p>>
+   <p> {{blog.content}} </p>
+        <p>
+        <form class="form comment-form">
+            <div class="form-group">
+        <h5>leave a comment</h5>
+        <input type="text" class="blog-comment"></input>
+        <button type="submit" value="Submit" class="form-input">Submit</button>
+        </div>
+        </form>
+    </p>
+
 {{/each}}
 </div>

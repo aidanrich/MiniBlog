@@ -13,7 +13,9 @@ router.get('/', withAuth, async (req, res) => {
 
         const blogAll = blogData.map((blog) => blog.get({ plain: true }));
         // where is this going?
-        res.render('blog', { blogAll });
+        res.render('blog', { blogAll, 
+            logged_in: req.session.logged_in,
+        });
 
     } catch (err) {
         console.log(err);
