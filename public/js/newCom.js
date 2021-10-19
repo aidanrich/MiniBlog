@@ -4,7 +4,7 @@ const newCommentFunc = async (event) => {
   console.log("comment hit 2")
 
   const mess_content = document.querySelector('.blog-comment').value.trim();
-  const blog_id = document.querySelector('.blog-num');
+  const blog_id = document.querySelector('.blog-num').value.trim();
 
   console.log(blog_id)
   console.log(mess_content)
