@@ -9,7 +9,7 @@
 - [Credits](#credits)
 - [License](#license)
 ## Installation
-- You will need to use 'npm i' in a command line and then log into a mysql instance and run the schema if you are cloning to repo to your own machine.
+- You will need to use 'npm i' in a command line and then log into a mysql instance and run the schema if you are cloning the repo to your own machine.
 ## Usage
 - Here is the github repo: https://github.com/aidanrich/MiniBlog
 - Find a live version of the app on heroku: https://tranquil-retreat-13699.herokuapp.com/
