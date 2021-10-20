@@ -15,6 +15,7 @@
 - Find a live version of the app on heroku: https://tranquil-retreat-13699.herokuapp.com/
 - Before you can start making your own posts you will need to make a login.
 - On the homescreen you will be bale to see everyone's posts. Click on 'Your Posts' to see only posts made with your login.
+- If you would rather not make your own login feel free to use: test@test.com, pass123
    
 ## Credits
 - We used the following npm packages: bcrypt, dotenv, express, express-handlebars, mysql2, sequelize, express-session and connect-session-sequelize.
