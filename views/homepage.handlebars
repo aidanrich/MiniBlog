@@ -20,12 +20,14 @@
 </form>
 <div>
 {{#each blogAll as |blog|}}
-<p> <h5><span class="blog-num">{{blog.id}}</span>.)  {{blog.name}}</h5> </p>
+<p> <h5><span class="blog-num">{{blog.id}}</span>.)  <a href="/blogsolo/{{blog.id}}" class="blog-link">{{blog.name}}</a></h5> </p>
 
    <p> {{blog.content}} </p>
    <p> Author's UserID: {{blog.user_id}} </p>
+
+
         <p>
-        <form class="form comment-form">
+        <form class="form under-comment-form">
             <div class="form-group">
         <h5>leave a comment</h5>
         <input type="text" class="blog-comment"></input>
@@ -36,4 +38,10 @@
 
 {{/each}}
 </div>
-</div>
+</div>   
+<p>
+       {{!-- add comment --}}
+       {{#each comAll as |comment|}}
+       {{comment.mess_content}}
+       {{/each}}
+   </p>

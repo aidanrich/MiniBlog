@@ -23,6 +23,22 @@ router.get('/blog/:user_id', withAuth, async (req, res) => {
     }
 });
 
+// router.get('/blogsolo/:id', async (req, res) => {
+//     console.log("get id 1?")
+//     try {
+//       const categoryData = await Blog.findByPk(req.params.id);
+  
+//       if (!categoryData) {
+//         res.status(404).json({ message: 'No Blog found with that id!' });
+//         return;
+//       }
+  
+//       res.render('blogsolo', categoryData )
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
+
 router.post('/', withAuth, async (req, res) => {
     console.log("hit")
     try {

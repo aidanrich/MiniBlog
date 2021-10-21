@@ -7,7 +7,7 @@ router.post('/', withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
             ...req.body,
-            user_id: req.session.user_id,
+            user_c_id: req.session.user_id,
         })
         console.log(newComment)
         res.json(newComment)
@@ -16,5 +16,7 @@ router.post('/', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
 
 module.exports = router;

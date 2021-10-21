@@ -1,13 +1,15 @@
 const router = require('express').Router();
 // const { Model } = require('sequelize/types');
-const { Blog } = require('../models');
+const { Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Get all blog entries
 router.get('/', withAuth, async (req, res) => {
  
     try {
-        const blogData = await Blog.findAll();
+        const blogData = await Blog.findAll({
+            include: [Comment],
+        });
         
         const blogAll = blogData.map((blog) => blog.get({ plain: true }));
         res.render('homepage', {blogAll,
@@ -19,6 +21,50 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
       }
 });
+
+// router.get('/', withAuth, async (req, res) => {
+ 
+//     try {
+//         const comData = await Comment.findByPk(req.params.blog_c_id);
+//         console.log(comData);
+//         if (!comData) {
+//             res.status(404).json({ message: 'No Category card found with that id!' });
+//             return;
+//           }
+        
+//         const comAll = comData.map((comment) => comment.get({ plain: true }));
+//         console.log(comAll)
+//         res.render('homepage', {comAll,
+//             logged_in: req.session.logged_in,
+//         });
+    
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//       }
+// });
+
+router.get('/blogsolo/:id', withAuth, async (req, res) => {
+    console.log("get id?")
+    try {
+      const categoryData = await Blog.findByPk(req.params.id);
+  
+      if (!categoryData) {
+        res.status(404).json({ message: 'No Blog card found with that id!' });
+        return;
+      }
+      
+      const blogOne = categoryData.get({ plain: true });
+
+      res.render('blogsolo', {blogOne,
+        logged_in: req.session.logged_in,
+      });
+
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 
 router.get('/blog', withAuth, async (req, res) => {
   console.log("you've got mail")
