@@ -1,5 +1,7 @@
-const newFormHandler = async (event) => {
-    event.preventDefault();
+const newPost = document.querySelector('.new-post-form')
+console.log(newPost)
+const newFormHandler = async () => {
+   
 
     const name = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-content').value.trim();
@@ -23,6 +25,9 @@ const newFormHandler = async (event) => {
     }
 }
 
-document
-  .querySelector('.new-post-form')
-  .addEventListener('submit', newFormHandler);
+newPost.addEventListener("submit", () => {
+  console.log("new post click")
+  newFormHandler();
+});
+
+  // .addEventListener('submit', newFormHandler);

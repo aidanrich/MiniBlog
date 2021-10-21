@@ -65,6 +65,20 @@ router.get('/blogsolo/:id', withAuth, async (req, res) => {
     }
   });
 
+router.delete('/blogsolo/:id', (req, res) => {
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!" + req.params.id)
+  // delete a category by its `id` value
+  Blog.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deletedCat) => {
+      res.json(deletedCat);
+    })
+    .catch((err) => res.json(err));
+});
+
 
 router.get('/blog', withAuth, async (req, res) => {
   console.log("you've got mail")

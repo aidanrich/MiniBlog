@@ -1,5 +1,7 @@
-const newCommentFunc = async (event) => {
-  event.preventDefault();
+const newComment = document.querySelector('.under-comment-form')
+
+const newCommentFunc = async () => {
+  
 
   console.log("comment hit 2")
 
@@ -35,6 +37,14 @@ const newCommentFunc = async (event) => {
   }
 }
 
-document
-  .querySelector('.under-comment-form')
-  .addEventListener('submit', newCommentFunc);
+newComment.addEventListener("submit", () => {
+  console.log("new post click")
+  newCommentFunc();
+});
+
+// document
+//   .querySelector('.under-comment-form')
+//   .addEventListener('submit', () => {
+//     console.log("line 40 in newCom")
+//     newCommentFunc()
+//   });
